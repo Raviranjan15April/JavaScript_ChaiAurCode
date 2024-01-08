@@ -33,7 +33,7 @@
 /*
 Conversion In to Number:-
 we can do that by passing that variable in to Number.
-    syntax:-  Number(variable).
+    syntax:-  Number(variable). or just adding + before that. or parseInt
 "333" --> 333 & type is number
 "333abc" --> NaN(Not a Number) & type is number
 true     --> 1 & type is number
@@ -72,7 +72,7 @@ Note:- type of NaN is "number".
 /*
 Conversion In to String:-
 we can do that by passing that variable in to String.
-    syntax:-  String(variable).
+    syntax:-  String(variable). or adding "" (empty string) before that.
 333      --> 333 & type is string
 true     --> true & type is string
 false    --> false & type is string
@@ -99,7 +99,7 @@ console.log(1+ "2");   // 12
 console.log("1" + 2 + 2);   // 122 
 console.log(1 + 2 + "3");   // 33 
 /*
-Note:- Operation will start from the left to right so above question is based on this concept only
+Note:- Operation will start executing from the left to right so above question is based on this concept only
 */
 
 /*
