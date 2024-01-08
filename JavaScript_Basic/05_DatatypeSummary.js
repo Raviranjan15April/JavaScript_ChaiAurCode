@@ -2,7 +2,7 @@
 Summary of Datatype:-
 primitive data type:- number, string, boolean, undefined, null, Bigint & Symbol
 non primitive(reference) data type:- Array, object, function
-Note:- typeof null is object, typeof undefined is undefined and type of function is function.
+Note:- typeof null is object, typeof undefined is undefined and type of function is function. But in javascript it is called function object.
 */
 // Symbol are used for uniqueness.
 let sym01 = Symbol('123');
