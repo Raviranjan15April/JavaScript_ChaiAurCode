@@ -39,3 +39,9 @@ console.log(Math.round(8.9875));            // 9
 console.log(Math.round(0.9));               // 1
 console.log(Math.round(5.95), Math.round(5.5), Math.round(5.05));       // 6 6 5
 console.log(Math.round(-5.05), Math.round(-5.5), Math.round(-5.95));    // -5 -5 -6
+
+// Need random number that belong to in between given min and max number.
+const min = 10;
+const max = 20;
+const result = Math.floor((Math.random() * (max - min + 1)) + min);
+console.log(result);
