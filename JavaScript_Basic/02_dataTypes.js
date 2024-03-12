@@ -25,8 +25,8 @@ function myFun(){
 }
 myFun();
 
-console.log(typeof myFun);
-console.log(typeof myFun());
-
-console.log(typeof null);
-console.log(typeof undefined);
+console.log(typeof myFun);        // function
+console.log(typeof myFun());      // string
+ 
+console.log(typeof null);         // object
+console.log(typeof undefined);    // undefined
