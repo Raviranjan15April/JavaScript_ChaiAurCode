@@ -56,7 +56,7 @@ Note:- type of NaN is "number".
 
 // let variable01 = false;
 // let convertedResult = String(variable01);
-// console.log(convertedResult);               // true
+// console.log(convertedResult);               // false
 // console.log(typeof convertedResult);        // string
 
 // let variable01 = null;
