@@ -41,7 +41,7 @@ console.log(arryUisngNewKeyword.at(-5));        // output:- undefined
 
 /*
 concat():-
-are used to concatanate/merge the two or more array. 
+are used to concatanate/merge the two or more array and return a new array. 
 */
 let concatArray01 = [1, 2, 3];
 let concatArray02 = [4, 5, 6];
