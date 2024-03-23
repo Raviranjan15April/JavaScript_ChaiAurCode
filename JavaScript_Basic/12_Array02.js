@@ -21,3 +21,12 @@ let arr03 = ["apple", "ball", "cat", "dog"];
 console.log(Array.isArray(arr03));      // output:- true
 
 console.log(Array.isArray("ramesh"));   // output:- false
+
+/*
+Array.of():- is static method that are used to create the array from the variable regardless the type of variable 
+    syntax:- Array.of(element1, element2, .... elementN);
+*/
+const newArray = Array.of("John", "Deo", 1, 2, true);
+console.log(newArray);                  // output:- [ 'John', 'Deo', 1, 2, true ]
+console.log(typeof newArray);           // output:- object
+console.log(Array.isArray(newArray));   // output:- true
