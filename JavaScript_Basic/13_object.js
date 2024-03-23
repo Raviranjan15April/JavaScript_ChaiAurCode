@@ -42,4 +42,44 @@ Object.freeze(myObj);
 myObj.age = 30;
 console.log(myObj.age);                 // output:-  27
 
-// Note:- If you want to access any property from object then that can be access by using the "this" keyword
+// Note:- If you want to access any property from object inside the function of that object then that can be access by using the "this" keyword
+
+// merge the two object in to one:- that can be done in two ways. using the Object.assign & spread operator 
+let obj01 = { 
+    key01 : "Value01",
+    key02 : "Value02"
+}
+
+let obj02 = { 
+    key03 : "Value03",
+    key04 : "Value04"
+}
+// merge the two object in to one object.
+let mergeObject = Object.assign({}, obj01, obj02);
+console.log(mergeObject);                   // output:- { key01: 'Value01', key02: 'Value02', key03: 'Value03',key04: 'Value04' }
+
+let mergeObjectUsingSpreadOperator = {...obj01, ...obj02};
+console.log(mergeObjectUsingSpreadOperator);    // output:- { key01: 'Value01', key02: 'Value02', key03: 'Value03',key04: 'Value04' }
+
+// object proprty 
+// Object.keys:- it will return the array of key.
+console.log(Object.keys(obj01));        // output:- [ 'key01', 'key02' ]
+
+// Object.values:- it will return the array of value
+console.log(Object.values(obj01));      // output:- [ 'Value01', 'Value02' ]
+
+// Object.hasownproperty:- it will return boolean value if that property is available or not
+console.log(obj01.hasOwnProperty("key01"));   // output:- true
+console.log(obj01.hasOwnProperty("key"));     // output:- false
+
+// Destructuring of object:-
+const cource = {
+    name : "React",
+    fee : "15K",
+    duration : "3 months",
+    classes : "everyDay"
+}
+
+const { name, fee, duration, classes } = cource;
+console.log(name);              // Output:- React
+console.log(fee);               // Output:- 15k
