@@ -41,3 +41,5 @@ myObj.greeting();                       // output:- this is function from object
 Object.freeze(myObj);
 myObj.age = 30;
 console.log(myObj.age);                 // output:-  27
+
+// Note:- If you want to access any property from object then that can be access by using the "this" keyword
