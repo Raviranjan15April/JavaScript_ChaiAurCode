@@ -35,4 +35,8 @@ function myFun04(arrArg){
 
 console.log(myFun04([12, 23, 34]));                         // Output:- 12
 
-// pass
+// passing the object as an argunment
+function myFun05(objArg){
+    return objArg.age;
+}
+console.log(myFun05({name: "john", age: 28}));              // output:- 28
