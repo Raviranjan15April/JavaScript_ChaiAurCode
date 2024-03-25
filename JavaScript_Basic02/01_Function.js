@@ -40,3 +40,5 @@ function myFun05(objArg){
     return objArg.age;
 }
 console.log(myFun05({name: "john", age: 28}));              // output:- 28
+
+// Note:- Var having a function scope, let & const is block scope. block is defined by { } so outside of this is called global scope. 
