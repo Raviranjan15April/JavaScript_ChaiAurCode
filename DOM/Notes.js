@@ -49,7 +49,50 @@ console.log(parentNode.lastElementChild);
 const childNode = document.querySelector('.day');
 console.log(childNode);
 const parentNodeFromChild = childNode.parentElement;
-console.log(parentNodeFromChild);
+console.log(parentNodeFromChild);               // parent of selected node.
+console.log(childNode.nextElementSibling);      // selecting next sibling of selected node 
 
+// create a element
+
+const div = document.createElement("div");      // creating an element
+console.log(div);                               
+div.className = "my-div";                       // setting class in to div
+div.id = "my-Id";                               // setting id in to div
+div.setAttribute("title", "div element");       // setting title in to div using setAttribute method
+div.style.backgroundColor = "green"             // adding style in to div
+div.style.padding = "12px";
+// div.innerText = "creating text using innerText";                 // adding text inside the div using innerText
+
+const text = document.createTextNode("creating text using createTextNode method");
+div.appendChild(text);
+
+const body = document.getElementById("body");
+body.appendChild(div);
+
+// add the new element
+function addList(language){
+    const newList = document.createElement('li');   // creating the element
+    newList.innerHTML = `${language}`;              // adding the text inside the created element
+    document.querySelector('.language-list').appendChild(newList);  // selecting the target and adding the element
+}
+
+addList('Go Lang');
+addList("C++");
+
+function addListInOptimizeWay(language){            // this is the optimize way to add the element
+    const listElement = document.createElement("li");
+    listElement.appendChild(document.createTextNode(`${language}`));
+    document.querySelector('.language-list').appendChild(listElement);
+}
+addListInOptimizeWay("Ruby");
+
+// Edit the element
+const secondList = document.querySelector("li:nth-child(2)");
+const newList = document.createElement('li').appendChild(document.createTextNode("Mojo"));
+secondList.replaceWith(newList);                // replaceWith will replace the element
+
+// delete the element
+const lastList = document.querySelector("li:last-child");
+lastList.remove();                              // remove() will remove the element from the list.
 
 */
