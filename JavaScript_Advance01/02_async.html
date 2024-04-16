@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async in JavaScript</title>
+</head>
+<body>
+    <h1 id="heading"> Chai aur Code </h1>
+
+    <button id="stop"> Stop </button>
+</body>
+<script>
+/*
+    Javascript:-    single threaded
+                    synchronous language
+                    Each operation waits for last one to complete before executing
+*/
+
+// setTimeout will take timeout and do the thing when timeout is over.
+setTimeout(()=>{                            
+    console.log("Hi Ravi");
+},2000);
+
+
+// in Below code we are changing the heading after 2 second.
+const changeText = ()=>{
+    const heading = document.getElementById("heading");
+    heading.innerHTML = "Best JavaScript series on youtube";
+}
+// setTimeout(changeText , 2000)            // Here using setTimeout we are changing the heading after 2 second.
+
+const changeMe = setTimeout(changeText , 2000)      // storing in variable so can take reference hat will used in clearTimeout
+
+// Note:- if we want to clear timeout then below way we can do that.
+// const stopChangeText = ()=>{
+    document.getElementById("stop").addEventListener("click", ()=>{
+        clearTimeout(changeMe)
+    })
+// }
+// stopChangeText()
+
+
+
+</script>
+</html>
