@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1> Chai aur JavaScript </h1>
+    <button id="start"> Start </button>
+    <button id="stop"> Stop </button>
+</body>
+<script>
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    let startIntervalPrint;
+    // start.addEventListener("click", (e)=>{                   // Adding the event listener on target.
+    //     console.log("==== Hi Ravi =");
+    // });
+
+
+    const startPrint = () =>{
+        startIntervalPrint =  setInterval((input)=>{           // setInterval take three argunment. handler, time, argument. third argument can be string.
+            console.log(`${input} ${Date.now()}`)
+        }, 1000, "Hi")
+    }
+
+    start.addEventListener("click", startPrint);   
+
+    stop.addEventListener("click", function(){
+        console.log("==== stop clicked");
+        clearInterval(startIntervalPrint);                      // clearInterval will clear setInterval.
+    });
+</script>
+</html>
