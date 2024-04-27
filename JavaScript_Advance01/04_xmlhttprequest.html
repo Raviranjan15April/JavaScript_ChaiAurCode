@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> xmlhttprequest </title>
+    <button id="myButton"> Details </button>
+</head>
+<body>
+    
+</body>
+<script>
+
+    const body = document.querySelector("body");
+    const div = document.createElement("div");
+    div.setAttribute("id", "myDiv");
+    // div.style.width = "500px";
+    // div.style.height = "600px";
+    // div.style.backgroundColor = "green"
+    // console.log(div);
+    body.appendChild(div)
+
+
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    // let responseFromApi;
+
+    const button = document.getElementById("myButton");
+    button.addEventListener("click", function(){
+        const xhr = new XMLHttpRequest();           // creating instance from the XMLHttpRequest
+        xhr.open("GET", requestUrl);                // opening the request. will take two parameter, first is method and second is request url
+        xhr.onreadystatechange = function(){        // on state change
+            if(xhr.readyState === 4){               // status of state 
+               const responseFromApi = JSON.parse(this.response);  // parsing the string to object by using the JSON.parse.
+                console.log(responseFromApi.name);
+                console.log(responseFromApi.avatar_url);
+                const img = document.createElement("img");
+        img.src  = responseFromApi.avatar_url;
+        img.alt = "Image from the git";
+        img.width = 200;
+        img.height = 150;
+
+        const name = document.createElement("p");
+        name.innerHTML = responseFromApi.name; 
+        div.appendChild(img);
+        div.appendChild(name);
+        body.appendChild(div);
+            }
+        }
+        xhr.send()
+        // console.log(responseFromApi)
+        // const img = document.createElement("img");
+        // img.src  = responseFromApi.avatar_url;
+        // img.alt = "Image from the git";
+        // img.width = 200;
+        // img.height = 150;
+
+        // const name = document.createElement("p");
+        // p.innerHTML = responseFromApi.name; 
+        // div.appendChild(img);
+        // div.appendChild(p);
+        // body.appendChild(div);
+
+    });
+
+ 
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <button id="orange"> Oragne Button </button>
+    <button id="green"> Green Button </button>
+</body>
+
+<script>
+/*
+closure:- function bundle along with there lexical envrionment from a closure.
+*/
+
+function init() {
+    var userName = "Mozilla"; 
+    function displayName() {
+      console.log(userName);                // Output:- mozilla 
+    }
+    displayName();
+}
+init();
+// console.log(userName);                   // Uncaught ReferenceError: userName is not defined
+
+// another example:-
+function makeFunc() {
+  const userName = "Mozilla";
+  function displayName() {
+    console.log(userName);                  // Output:- mozilla
+  }
+  return displayName;
+}
+// console.log(userName);                      // Uncaught ReferenceError: userName is not defined
+const myFunc = makeFunc();
+myFunc();
+
+// Need to write a implementation of closure: there two button is there on click on both button background should be changed to orange and green resoectively.
+
+document.getElementById("orange").onclick = function(){
+    document.body.style.backgroundColor = `orange`
+}
+document.getElementById("green").onclick = function(){
+    document.body.style.backgroundColor = `green`
+}
+// the above code will work fine but just imagine now we have only two button in case if we have more than 1000 button than we can't do by this way.
+
+
+const clickHandler = (color) => {
+    return function(){
+        document.body.style.backgroundColor = `${color}`;
+    }
+}
+
+document.getElementById("orange").onclick  = clickHandler('orange')
+
+document.getElementById("green").onclick  = clickHandler('green')
+
+</script>
+</html>

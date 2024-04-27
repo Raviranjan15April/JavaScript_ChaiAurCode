@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button> Button </button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = 'React'
+            this.server = "https://localhost:3000";
+
+            // document.querySelector('button').addEventListener("click", this.handleClick); // this is without bind 
+
+            document.querySelector('button').addEventListener("click", this.handleClick.bind(this));
+        }
+
+        handleClick(){
+            console.log("button Clicked");
+            console.log(this.server)        // this will give "undefined"; as here this is getting lost without using the bind  
+            console.log(this)               // this will give you referece of button as this method is getting called from the button.
+
+            // Note:- if we want to access the variable that was created in constructor for that we need bind otherwise reference of "this" is getting lost.  
+        }
+    }
+    const app = new React();
+</script>
+</html>
