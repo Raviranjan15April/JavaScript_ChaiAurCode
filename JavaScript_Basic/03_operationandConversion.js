@@ -40,7 +40,7 @@ true     --> 1 & type is number
 false    --> 0 & type is number
 null     --> 0 & type is number
 undefined --> NaN(Not a Number) & type is number
-Note:- type of NaN is "number".
+Note:- type of NaN is "number". when we will convert empty string in to number value is 0, and type is number.
 */
 
 // Conversting in to string.
