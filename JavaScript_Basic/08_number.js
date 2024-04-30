@@ -7,7 +7,7 @@ MAX_VALUE :- Maximum numeric value repersentable in javascript.
 MIN_SAFE_INTEGER :- Minimum safe integer in javascript.
 MIN_VALUE :- Manimum numeric value repersentable in javascript.
 parseFloat :- passes the string argunment and return floating point number.
-parseInt :- passes the string argunment and return floating point number.
+parseInt :- passes the string argunment and return number.
 toFixed :- gives number using floating notation.
 */
 console.log(Number("123"));                 // 123
